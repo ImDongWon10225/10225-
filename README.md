@@ -1,4 +1,4 @@
-# 첫날(임동원)-7/31
+# 첫날(임동원)-7/30
 광전효과를 표현하기 위한 금속 판을 준비한다.
 광전효과는 금속 표면에 일정 에너지 이상의 빛을 쪼일 때 전자가 에너지를 얻어 튀어나오는 현상이므로 이를 표현하기 위해서는 기본적으로 금속판과 전자가 필요하다.
 
@@ -12,3 +12,32 @@ while True :
     photon.pos = photon.pos + photon.v *0.01  #v=v0 + at
     if photon.pos.y <= 10 :    
         photon.v.y = -photon.v.y
+
+#둘째날-7/31
+빛은 파동의 전달방향에 수직방향으로 매질의 움직임이 나타나는 횡파이다. 삼각함수의 그래프를 이용해 빛이 이동하는 모습을 표현해볼 것이다.
+
+ball = sphere(make_trail = True)
+for i in range(1000) :
+   rate(100)
+   ball.pos.x += sin(i/10)
+   ball.pos.y += 0.1
+for i in range(100) :
+   rate(100)
+   ball.pos.x -= sin(i/10)
+   ball.pos.y -= 0.1
+#우선 공을 이용해 공이 사인 모양으로 가도록 표현해보았다. 사인값을 나눈 것은 그래프의 모양을 더 부드럽게 만들기 위해서이다.
+
+
+Web VPython 3.2
+
+box(pos = vec(-200,0,0), size = vec(10,400,200), color =vector(163/100,163/100,163/100))
+
+photon = sphere(pos = vec(200 ,0,0), radius = 5, color = color. red, make_trail = True)
+while (photon.pos.x > 0) :
+   for i in range(10000) :
+    rate(1000)
+    photon.pos.x -= 0.1
+    photon.pos.y += sin(i/20)/10
+ #공이 횡파의 형태를 이루며 나아가는 것을 표현하였다.
+
+  
